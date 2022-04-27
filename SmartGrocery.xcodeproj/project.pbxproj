@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C312AAA248ED8A2ACF7ECAE /* Pods_SmartGrocery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3653FDFF9EEFEE19DBD4D7 /* Pods_SmartGrocery.framework */; };
 		D0204CF02819E0F000719305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0204CEF2819E0F000719305 /* AppDelegate.swift */; };
 		D0204CF22819E0F000719305 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0204CF12819E0F000719305 /* SceneDelegate.swift */; };
 		D0204CF42819E0F000719305 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0204CF32819E0F000719305 /* ViewController.swift */; };
 		D0204CF72819E0F000719305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0204CF52819E0F000719305 /* Main.storyboard */; };
 		D0204CF92819E0F100719305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0204CF82819E0F100719305 /* Assets.xcassets */; };
 		D0204CFC2819E0F100719305 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0204CFA2819E0F100719305 /* LaunchScreen.storyboard */; };
+		D094D9212819E9410091F96A /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D094D9202819E9410091F96A /* APIKeys.swift */; };
+		D0F976D12819E6B400900528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F976D02819E6B400900528 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02A6107777B987FFA31CF970 /* Pods-SmartGrocery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartGrocery.debug.xcconfig"; path = "Target Support Files/Pods-SmartGrocery/Pods-SmartGrocery.debug.xcconfig"; sourceTree = "<group>"; };
+		171C0E6DEBA46D563920E822 /* Pods-SmartGrocery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartGrocery.release.xcconfig"; path = "Target Support Files/Pods-SmartGrocery/Pods-SmartGrocery.release.xcconfig"; sourceTree = "<group>"; };
 		D0204CEC2819E0F000719305 /* SmartGrocery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartGrocery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0204CEF2819E0F000719305 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0204CF12819E0F000719305 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		D0204CF82819E0F100719305 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0204CFB2819E0F100719305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0204CFD2819E0F100719305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D094D9202819E9410091F96A /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		D0F976D02819E6B400900528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		ED3653FDFF9EEFEE19DBD4D7 /* Pods_SmartGrocery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartGrocery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C312AAA248ED8A2ACF7ECAE /* Pods_SmartGrocery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E5CBB3EAC4AA8EF52333035 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02A6107777B987FFA31CF970 /* Pods-SmartGrocery.debug.xcconfig */,
+				171C0E6DEBA46D563920E822 /* Pods-SmartGrocery.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		382567685ADB74F4758799C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED3653FDFF9EEFEE19DBD4D7 /* Pods_SmartGrocery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0204CE32819E0F000719305 = {
 			isa = PBXGroup;
 			children = (
 				D0204CEE2819E0F000719305 /* SmartGrocery */,
 				D0204CED2819E0F000719305 /* Products */,
+				1E5CBB3EAC4AA8EF52333035 /* Pods */,
+				382567685ADB74F4758799C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,10 +87,12 @@
 				D0204CEF2819E0F000719305 /* AppDelegate.swift */,
 				D0204CF12819E0F000719305 /* SceneDelegate.swift */,
 				D0204CF32819E0F000719305 /* ViewController.swift */,
+				D094D9202819E9410091F96A /* APIKeys.swift */,
 				D0204CF52819E0F000719305 /* Main.storyboard */,
 				D0204CF82819E0F100719305 /* Assets.xcassets */,
 				D0204CFA2819E0F100719305 /* LaunchScreen.storyboard */,
 				D0204CFD2819E0F100719305 /* Info.plist */,
+				D0F976D02819E6B400900528 /* GoogleService-Info.plist */,
 			);
 			path = SmartGrocery;
 			sourceTree = "<group>";
@@ -74,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0204D002819E0F100719305 /* Build configuration list for PBXNativeTarget "SmartGrocery" */;
 			buildPhases = (
+				0B5675786EFB5F4B2E7B8C5E /* [CP] Check Pods Manifest.lock */,
 				D0204CE82819E0F000719305 /* Sources */,
 				D0204CE92819E0F000719305 /* Frameworks */,
 				D0204CEA2819E0F000719305 /* Resources */,
+				CFB3C2C5D9BE776E2620781E /* [CP] Embed Pods Frameworks */,
+				65CAA340BD1BF905C6C488F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,12 +159,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0204CFC2819E0F100719305 /* LaunchScreen.storyboard in Resources */,
+				D0F976D12819E6B400900528 /* GoogleService-Info.plist in Resources */,
 				D0204CF92819E0F100719305 /* Assets.xcassets in Resources */,
 				D0204CF72819E0F000719305 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B5675786EFB5F4B2E7B8C5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartGrocery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65CAA340BD1BF905C6C488F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartGrocery/Pods-SmartGrocery-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartGrocery/Pods-SmartGrocery-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartGrocery/Pods-SmartGrocery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFB3C2C5D9BE776E2620781E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartGrocery/Pods-SmartGrocery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartGrocery/Pods-SmartGrocery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartGrocery/Pods-SmartGrocery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0204CE82819E0F000719305 /* Sources */ = {
@@ -140,6 +233,7 @@
 			files = (
 				D0204CF42819E0F000719305 /* ViewController.swift in Sources */,
 				D0204CF02819E0F000719305 /* AppDelegate.swift in Sources */,
+				D094D9212819E9410091F96A /* APIKeys.swift in Sources */,
 				D0204CF22819E0F000719305 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +376,7 @@
 		};
 		D0204D012819E0F100719305 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A6107777B987FFA31CF970 /* Pods-SmartGrocery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +405,7 @@
 		};
 		D0204D022819E0F100719305 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 171C0E6DEBA46D563920E822 /* Pods-SmartGrocery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
