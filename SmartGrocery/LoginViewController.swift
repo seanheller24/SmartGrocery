@@ -37,9 +37,35 @@ class LoginViewController: UIViewController {
             loginViewController.modalPresentationStyle = .fullScreen
             present(loginViewController, animated: true, completion: nil)
         } else { // user is already logged in
-            performSegue(withIdentifier: "FirstShowSegue", sender: nil)
+            guard let currentUser = authUI.auth?.currentUser else{
+                print("😡 ERROR: Couldn't get currentUser")
+                return
+            }
+            let groceryUser = GroceryUser(user: currentUser)
+            groceryUser.saveIfNewUser { (success) in
+                if success {
+                    self.performSegue(withIdentifier: "FirstShowSegue", sender: nil)
+                } else {
+                    print("😡 ERROR: Tried to save a new GroceryUser, but failed")
+                }
+            }
         }
     }
+    
+//    override func prepare(for segue:UIStoryboardSegue, sender: Any?) {
+//        let db = Firestore.firestore()
+//        
+//        let userRef = db.collection("users").document(authUI.auth?.currentUser?.uid)
+//        userRef.getDocument { (document, error) in
+//            guard error == nil else {
+//                print("😡 ERROR: could not access document for user \(self.documentID)")
+//                return completion(false)
+//            }
+//        if segue.identifier == "FirstShowSegue" {
+//            let destination = segue.destination as! HomeViewController
+//            destination.groceryUser = db.collection("users").document(authUI.auth?.currentUser?.uid)
+//        }
+//    }
     
     func signOut() {
         do {
@@ -81,7 +107,7 @@ extension LoginViewController: FUIAuthDelegate {
         
         // Create the UIImageView using the frame created above & add the "logo" image
         let logoImageView = UIImageView(frame: logoFrame)
-        logoImageView.image = UIImage(named: "logo")
+        logoImageView.image = UIImage(named: "LaunchScreenFood")
         logoImageView.contentMode = .scaleAspectFit // Set imageView to Aspect Fit
         loginViewController.view.addSubview(logoImageView) // Add ImageView to the login controller's main view
         return loginViewController
