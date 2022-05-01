@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductsViewController: UIViewController {
+class ProductViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,9 +24,16 @@ class ProductsViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            let destination = segue.destination as! ProductDetailViewController
+            let indexPathForSelectedRow = tableView.indexPathForSelectedRow!
+            destination.product = products.productsArray[indexPathForSelectedRow.row]
+        }
+    }
 }
 
-extension ProductsViewController: UITableViewDelegate,UITableViewDataSource {
+extension ProductViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.productsArray.count
         }

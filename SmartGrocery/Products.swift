@@ -16,13 +16,6 @@ class Products {
         var products: [Product]
     }
     
-    struct Product: Codable {
-        var product_name: String
-        var url: String
-        var allergens_tags: [String]
-        
-    }
-    
     var count = 0
     var page = 0
     var page_count = 0
@@ -67,7 +60,11 @@ class Products {
                 if self.page < (self.count/self.page_size) {
                     self.urlString = "https://us.openfoodfacts.org/cgi/search.pl?action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=milk&tagtype_1=allergens&tag_contains_1=contains&tag_1=soybeans&json=true&page=\(self.page+1)"
                 }
-                self.productsArray = self.productsArray + returned.products
+                for product in returned.products {
+                    if product.product_name != "" {
+                        self.productsArray = self.productsArray + [product]
+                    }
+                }
                 
             } catch {
                 print("😡 JSON ERROR: \(error.localizedDescription)")

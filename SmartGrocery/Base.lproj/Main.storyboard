@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AeY-B0-wag">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cml-R2-IPp">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -262,16 +262,16 @@
             </objects>
             <point key="canvasLocation" x="2026.875" y="80.281690140845072"/>
         </scene>
-        <!--Products View Controller-->
+        <!--Product View Controller-->
         <scene sceneID="kRn-rc-3et">
             <objects>
-                <viewController id="AeY-B0-wag" customClass="ProductsViewController" customModule="SmartGrocery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AeY-B0-wag" customClass="ProductViewController" customModule="SmartGrocery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QQp-7q-bk4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DVq-NN-6O4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="CiB-ZM-Mz9">
@@ -281,6 +281,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sTw-hQ-o4E" kind="show" identifier="ShowDetail" id="sIG-6K-YnV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -294,13 +297,93 @@
                             <constraint firstItem="DVq-NN-6O4" firstAttribute="leading" secondItem="mCV-qG-pxf" secondAttribute="leading" id="syh-pL-8bz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zCI-Js-svl"/>
                     <connections>
                         <outlet property="tableView" destination="DVq-NN-6O4" id="omE-oQ-44U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPV-hV-uWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3195" y="80"/>
+            <point key="canvasLocation" x="4192.5" y="79.225352112676063"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="kbC-U5-fu5">
+            <objects>
+                <viewController id="sTw-hQ-o4E" customClass="ProductDetailViewController" customModule="SmartGrocery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Znn-T8-7LS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGv-92-WpS">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrX-To-yKj">
+                                        <rect key="frame" x="60" y="30" width="200" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="27"/>
+                                        <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Link:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwE-pF-IJU">
+                                        <rect key="frame" x="95" y="451" width="131" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypP-dF-n7u">
+                                        <rect key="frame" x="8" y="310" width="304" height="127"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</string>
+                                        <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allergen Infromation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haM-Lo-SoM">
+                                        <rect key="frame" x="60" y="279" width="200" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMh-bz-6LP">
+                                        <rect key="frame" x="8" y="85" width="304" height="176"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="https:test.testurl.com" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QM3-Ck-Kyu">
+                                        <rect key="frame" x="8" y="482" width="304" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qcm-XF-qly"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zGv-92-WpS" firstAttribute="leading" secondItem="Qcm-XF-qly" secondAttribute="leading" id="AQg-JE-i63"/>
+                            <constraint firstItem="Qcm-XF-qly" firstAttribute="bottom" secondItem="zGv-92-WpS" secondAttribute="bottom" id="EyF-wn-y7i"/>
+                            <constraint firstItem="zGv-92-WpS" firstAttribute="top" secondItem="Qcm-XF-qly" secondAttribute="top" id="XEc-Tp-RvM"/>
+                            <constraint firstItem="Qcm-XF-qly" firstAttribute="trailing" secondItem="zGv-92-WpS" secondAttribute="trailing" id="dJg-FW-H6a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xEM-C1-C2Y"/>
+                    <connections>
+                        <outlet property="allergenTextView" destination="ypP-dF-n7u" id="Uf9-gQ-keF"/>
+                        <outlet property="imageView" destination="vMh-bz-6LP" id="eSa-ms-1YP"/>
+                        <outlet property="productNameLabel" destination="wrX-To-yKj" id="XPd-Y8-4WQ"/>
+                        <outlet property="productURLLabel" destination="QM3-Ck-Kyu" id="OP8-h5-R36"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeF-HY-KeA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5319.375" y="80.281690140845072"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1PW-is-zJS">
@@ -321,6 +404,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APL-RR-TEw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.75" y="81.338028169014081"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="huZ-wm-BbZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cml-R2-IPp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xLb-4H-ZpD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AeY-B0-wag" kind="relationship" relationship="rootViewController" id="wsh-Rf-mid"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzb-zv-Nek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3083" y="-577"/>
         </scene>
     </scenes>
     <resources>
