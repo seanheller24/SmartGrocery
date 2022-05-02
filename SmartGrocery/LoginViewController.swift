@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 
@@ -44,10 +45,33 @@ class LoginViewController: UIViewController {
                 return
             }
             groceryUser = GroceryUser(user: currentUser)
+            
+//            let db = Firestore.firestore()
+//            // Create the dictionary representing data we want to save
+//            let userRef = db.collection("profiles").document(groceryUser.documentID)
+//            userRef.getDocument { (document, error) in
+//                guard error == nil else {
+//                    print("😡 ERROR: could not access document for user \(self.groceryUser.documentID)")
+//                    return
+//                }
+//                guard document?.exists == false else{
+//                    self.groceryProfile = GroceryProfile(dictionary: document!.data()!)
+//                    return
+//                }
+//                let dataToSave: [String: Any] = GroceryProfile(groceryUserID: self.groceryUser.documentID).dictionary
+//                db.collection("profiles").document(self.groceryUser.documentID).setData(dataToSave) { (error) in
+//                guard error == nil else{
+//                    print("ERROR: \(error!.localizedDescription), could not save data for \(self.groceryUser.documentID)")
+//                    return
+//                }
+//                print("Created new GroceryProfile")
+//                    self.groceryProfile = GroceryProfile(dictionary: GroceryProfile(groceryUserID: self.groceryUser.documentID).dictionary)
+//                }
+//            }
             groceryProfile = GroceryProfile(groceryUserID: groceryUser.documentID)
-            groceryProfile.saveData { (success) in
+            groceryProfile.saveIfNewProfile { (success) in
                 if success {
-                    print("Saved GroceryProfile")
+                    print("Saved / Updated GroceryProfile")
                 }
                 else {
                     print("😡 ERROR: Tried to save a new GroceryProfile, but failed")
@@ -60,7 +84,6 @@ class LoginViewController: UIViewController {
                     print("😡 ERROR: Tried to save a new GroceryUser, but failed")
                 }
             }
-            groceryProfile = GroceryProfile(groceryUserID: groceryUser.documentID)
         }
     }
     

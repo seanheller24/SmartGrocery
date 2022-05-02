@@ -47,15 +47,33 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let db = Firestore.firestore()
+        // Create the dictionary representing data we want to save
+        let userRef = db.collection("profiles").document("\(groceryUser.documentID)")
+        userRef.getDocument { document, error in
+            if let error = error {
+                print("Couldn't access document \(error.localizedDescription)")
+            }
+            self.groceryProfile = GroceryProfile(dictionary: document!.data()!)
+            self.groceryProfile.documentID = "\(self.groceryUser.documentID)"
+            self.soyButtonSelected = self.groceryProfile.soyButtonSelected
+            self.lactoseButtonSelected = self.groceryProfile.lactoseButtonSelected
+            self.treenutButtonSelected = self.groceryProfile.treenutButtonSelected
+            self.peanutButtonSelected = self.groceryProfile.peanutButtonSelected
+            self.wheatButtonSelected = self.groceryProfile.wheatButtonSelected
+            self.eggButtonSelected = self.groceryProfile.eggButtonSelected
+            self.fishButtonSelected = self.groceryProfile.fishButtonSelected
+            self.shellfishButtonSelected = self.groceryProfile.shellfishButtonSelected
+            self.soybeansButton.setImage(UIImage(systemName: self.soyButtonSelected ? "checkmark.square" : "square"), for: .normal)
+            self.lactoseButton.setImage(UIImage(systemName: self.lactoseButtonSelected ? "checkmark.square" : "square"), for: .normal)
+            self.treenutButton.setImage(UIImage(systemName: self.treenutButtonSelected ? "checkmark.square" : "square"), for: .normal)
+            self.peanutButton.setImage(UIImage(systemName: self.peanutButtonSelected ? "checkmark.square" : "square"), for: .normal)
+            self.wheatButton.setImage(UIImage(systemName: self.wheatButtonSelected ? "checkmark.square" : "square"), for: .normal)
+            self.eggButton.setImage(UIImage(systemName: self.eggButtonSelected ? "checkmark.square" : "square"), for: .normal)
+            self.fishButton.setImage(UIImage(systemName: self.fishButtonSelected ? "checkmark.square" : "square"), for: .normal)
+            self.shellfishButton.setImage(UIImage(systemName: self.shellfishButtonSelected ? "checkmark.square" : "square"), for: .normal)
+        }
         
-        soyButtonSelected = groceryProfile.soyButtonSelected
-        lactoseButtonSelected = groceryProfile.lactoseButtonSelected
-        treenutButtonSelected = groceryProfile.treenutButtonSelected
-        peanutButtonSelected = groceryProfile.peanutButtonSelected
-        wheatButtonSelected = groceryProfile.wheatButtonSelected
-        eggButtonSelected = groceryProfile.eggButtonSelected
-        fishButtonSelected = groceryProfile.fishButtonSelected
-        shellfishButtonSelected = groceryProfile.shellfishButtonSelected
         
         displayNameLabel.text = groceryUser.displayName
         emailLabel.text = groceryUser.email
@@ -77,72 +95,152 @@ class HomeViewController: UIViewController {
         if soyButtonSelected {
             soybeansButton.setImage(UIImage(systemName: "square"), for: .normal)
             soyButtonSelected = false
+            groceryProfile.soyButtonSelected = soyButtonSelected
         } else {
             soybeansButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
             soyButtonSelected = true
+            groceryProfile.soyButtonSelected = soyButtonSelected
+        }
+        groceryProfile.saveData { (success) in
+            if success {
+                print("Updated GroceryProfile")
+            }
+            else {
+                print("😡 ERROR: Tried to update a new GroceryProfile, but failed")
+            }
         }
     }
     @IBAction func lactoseButtonPressed(_ sender: UIButton) {
         if lactoseButtonSelected {
             lactoseButton.setImage(UIImage(systemName: "square"), for: .normal)
             lactoseButtonSelected = false
+            groceryProfile.lactoseButtonSelected = lactoseButtonSelected
         } else {
             lactoseButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
             lactoseButtonSelected = true
+            groceryProfile.lactoseButtonSelected = lactoseButtonSelected
+        }
+        groceryProfile.saveData { (success) in
+            if success {
+                print("Updated GroceryProfile")
+            }
+            else {
+                print("😡 ERROR: Tried to update a new GroceryProfile, but failed")
+            }
         }
     }
     @IBAction func treenutButtonPressed(_ sender: UIButton) {
         if treenutButtonSelected {
             treenutButton.setImage(UIImage(systemName: "square"), for: .normal)
             treenutButtonSelected = false
+            groceryProfile.treenutButtonSelected = treenutButtonSelected
         } else {
             treenutButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
             treenutButtonSelected = true
+            groceryProfile.treenutButtonSelected = treenutButtonSelected
+        }
+        groceryProfile.saveData { (success) in
+            if success {
+                print("Updated GroceryProfile")
+            }
+            else {
+                print("😡 ERROR: Tried to update a new GroceryProfile, but failed")
+            }
         }
     }
     @IBAction func peanutButtonPressed(_ sender: UIButton) {
         if peanutButtonSelected {
             peanutButton.setImage(UIImage(systemName: "square"), for: .normal)
             peanutButtonSelected = false
+            groceryProfile.peanutButtonSelected = peanutButtonSelected
         } else {
             peanutButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
             peanutButtonSelected = true
+            groceryProfile.peanutButtonSelected = peanutButtonSelected
+        }
+        groceryProfile.saveData { (success) in
+            if success {
+                print("Updated GroceryProfile")
+            }
+            else {
+                print("😡 ERROR: Tried to update a new GroceryProfile, but failed")
+            }
         }
     }
     @IBAction func wheatButtonPressed(_ sender: UIButton) {
         if wheatButtonSelected {
             wheatButton.setImage(UIImage(systemName: "square"), for: .normal)
             wheatButtonSelected = false
+            groceryProfile.wheatButtonSelected = wheatButtonSelected
         } else {
             wheatButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
             wheatButtonSelected = true
+            groceryProfile.wheatButtonSelected = wheatButtonSelected
+        }
+        groceryProfile.saveData { (success) in
+            if success {
+                print("Updated GroceryProfile")
+            }
+            else {
+                print("😡 ERROR: Tried to update a new GroceryProfile, but failed")
+            }
         }
     }
     @IBAction func eggButtonPressed(_ sender: UIButton) {
         if eggButtonSelected {
             eggButton.setImage(UIImage(systemName: "square"), for: .normal)
             eggButtonSelected = false
+            groceryProfile.eggButtonSelected = eggButtonSelected
         } else {
             eggButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
             eggButtonSelected = true
+            groceryProfile.eggButtonSelected = eggButtonSelected
+        }
+        groceryProfile.saveData { (success) in
+            if success {
+                print("Updated GroceryProfile")
+            }
+            else {
+                print("😡 ERROR: Tried to update a new GroceryProfile, but failed")
+            }
         }
     }
     @IBAction func fishButtonPressed(_ sender: UIButton) {
         if fishButtonSelected {
             fishButton.setImage(UIImage(systemName: "square"), for: .normal)
             fishButtonSelected = false
+            groceryProfile.fishButtonSelected = fishButtonSelected
         } else {
             fishButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
             fishButtonSelected = true
+            groceryProfile.fishButtonSelected = fishButtonSelected
+        }
+        groceryProfile.saveData { (success) in
+            if success {
+                print("Updated GroceryProfile")
+            }
+            else {
+                print("😡 ERROR: Tried to update a new GroceryProfile, but failed")
+            }
         }
     }
     @IBAction func shellfishButtonPressed(_ sender: UIButton) {
         if shellfishButtonSelected {
             shellfishButton.setImage(UIImage(systemName: "square"), for: .normal)
             shellfishButtonSelected = false
+            groceryProfile.shellfishButtonSelected = shellfishButtonSelected
         } else {
             shellfishButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
             shellfishButtonSelected = true
+            groceryProfile.shellfishButtonSelected = shellfishButtonSelected
+        }
+        groceryProfile.saveData { (success) in
+            if success {
+                print("Updated GroceryProfile")
+            }
+            else {
+                print("😡 ERROR: Tried to update a new GroceryProfile, but failed")
+            }
         }
     }
     @IBAction func searchButton(_ sender: UIButton) {

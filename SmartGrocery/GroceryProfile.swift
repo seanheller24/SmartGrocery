@@ -52,7 +52,7 @@ class GroceryProfile{
         self.init(soyButtonSelected: soyButtonSelected, lactoseButtonSelected: lactoseButtonSelected, treenutButtonSelected: treenutButtonSelected, peanutButtonSelected: peanutButtonSelected, wheatButtonSelected: wheatButtonSelected, eggButtonSelected: eggButtonSelected, fishButtonSelected: fishButtonSelected, shellfishButtonSelected: shellfishButtonSelected, documentID: "")
     }
     
-    func saveData(completion: @escaping (Bool) -> ()) {
+    func saveIfNewProfile(completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         // Create the dictionary representing data we want to save
         let userRef = db.collection("profiles").document(documentID)
@@ -75,7 +75,26 @@ class GroceryProfile{
                 return completion(true)
             }
         }
-
+    }
+    func saveData(completion: @escaping (Bool) -> ()) {
+        let db = Firestore.firestore()
+        // Create the dictionary representing data we want to save
+        let dataToSave: [String: Any] = self.dictionary
+        let ref = db.collection("profiles").document(documentID)
+        ref.getDocument { (document, error) in
+            guard error == nil else {
+                print("😡 ERROR: could not access document for user \(self.documentID)")
+                return completion(false)
+            }
+            db.collection("profiles").document(self.documentID).setData(dataToSave) { (error) in
+                guard error == nil else {
+                    print("😡 ERROR: updating document \(error!.localizedDescription)")
+                    return completion(false)
+                }
+                print("💨 Updated document: \(self.documentID)") // It worked!
+                completion(true)
+            }
+        }
     }
     
     
