@@ -31,6 +31,19 @@ class ProductViewController: UIViewController {
             destination.product = products.productsArray[indexPathForSelectedRow.row]
         }
     }
+    
+    func leaveViewController() {
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        if isPresentingInAddMode {
+            dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        leaveViewController()
+    }
+    
 }
 
 extension ProductViewController: UITableViewDelegate,UITableViewDataSource {

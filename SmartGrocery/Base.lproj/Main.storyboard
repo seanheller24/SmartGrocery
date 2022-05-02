@@ -391,6 +391,7 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="oCh-G8-VCd"/>
+                                    <segue destination="cml-R2-IPp" kind="presentation" identifier="ShowProducts" modalPresentationStyle="fullScreen" id="C7u-an-Otm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -473,7 +474,14 @@
                             <constraint firstItem="DVq-NN-6O4" firstAttribute="leading" secondItem="mCV-qG-pxf" secondAttribute="leading" id="syh-pL-8bz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zCI-Js-svl"/>
+                    <navigationItem key="navigationItem" id="zCI-Js-svl">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="X8R-AR-QtE">
+                            <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="AeY-B0-wag" id="UW0-6X-AD8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="DVq-NN-6O4" id="omE-oQ-44U"/>
                     </connections>
