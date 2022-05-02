@@ -35,9 +35,17 @@ class HomeViewController: UIViewController {
     var groceryUser: GroceryUser!
     var authUI: FUIAuth!
     
+    var soyButtonSelected = false
+    var lactoseButtonSelected = false
+    var treenutButtonSelected = false
+    var peanutButtonSelected = false
+    var wheatButtonSelected = false
+    var eggButtonSelected = false
+    var fishButtonSelected = false
+    var shellfishButtonSelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         displayNameLabel.text = groceryUser.displayName
         emailLabel.text = groceryUser.email
         userSinceLabel.text = "\(dateFormatter.string(from: groceryUser.userSince))"
@@ -55,59 +63,75 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func soybeansButtonPressed(_ sender: UIButton) {
-        if soybeansButton.currentImage! == UIImage(systemName: "square") {
-            soybeansButton.setImage(UIImage(systemName: "square"),for: .normal)
+        if soyButtonSelected {
+            soybeansButton.setImage(UIImage(systemName: "square"), for: .normal)
+            soyButtonSelected = false
         } else {
-            soybeansButton.setImage(UIImage(systemName: "checkmark.square"),for: .normal)
+            soybeansButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            soyButtonSelected = true
         }
     }
     @IBAction func lactoseButtonPressed(_ sender: UIButton) {
-        if lactoseButton.currentImage == UIImage(systemName: "square") {
-            lactoseButton.setImage(UIImage(systemName: "square"),for: .normal)
+        if lactoseButtonSelected {
+            lactoseButton.setImage(UIImage(systemName: "square"), for: .normal)
+            lactoseButtonSelected = false
         } else {
-            lactoseButton.setImage(UIImage(systemName: "checkmark.square"),for: .normal)
+            lactoseButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            lactoseButtonSelected = true
         }
     }
     @IBAction func treenutButtonPressed(_ sender: UIButton) {
-        if treenutButton.currentImage == UIImage(systemName: "square") {
-            treenutButton.setImage(UIImage(systemName: "square"),for: .normal)
+        if treenutButtonSelected {
+            treenutButton.setImage(UIImage(systemName: "square"), for: .normal)
+            treenutButtonSelected = false
         } else {
-            treenutButton.setImage(UIImage(systemName: "checkmark.square"),for: .normal)
+            treenutButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            treenutButtonSelected = true
         }
     }
     @IBAction func peanutButtonPressed(_ sender: UIButton) {
-        if peanutButton.currentImage == UIImage(systemName: "square") {
-            peanutButton.setImage(UIImage(systemName: "square"),for: .normal)
+        if peanutButtonSelected {
+            peanutButton.setImage(UIImage(systemName: "square"), for: .normal)
+            peanutButtonSelected = false
         } else {
-            peanutButton.setImage(UIImage(systemName: "checkmark.square"),for: .normal)
+            peanutButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            peanutButtonSelected = true
         }
     }
     @IBAction func wheatButtonPressed(_ sender: UIButton) {
-        if wheatButton.currentImage == UIImage(systemName: "square") {
-            wheatButton.setImage(UIImage(systemName: "square"),for: .normal)
+        if wheatButtonSelected {
+            wheatButton.setImage(UIImage(systemName: "square"), for: .normal)
+            wheatButtonSelected = false
         } else {
-            wheatButton.setImage(UIImage(systemName: "checkmark.square"),for: .normal)
+            wheatButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            wheatButtonSelected = true
         }
     }
     @IBAction func eggButtonPressed(_ sender: UIButton) {
-        if eggButton.currentImage == UIImage(systemName: "square") {
-            eggButton.setImage(UIImage(systemName: "square"),for: .normal)
+        if eggButtonSelected {
+            eggButton.setImage(UIImage(systemName: "square"), for: .normal)
+            eggButtonSelected = false
         } else {
-            eggButton.setImage(UIImage(systemName: "checkmark.square"),for: .normal)
+            eggButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            eggButtonSelected = true
         }
     }
     @IBAction func fishButtonPressed(_ sender: UIButton) {
-        if fishButton.currentImage == UIImage(systemName: "square") {
-            fishButton.setImage(UIImage(systemName: "square"),for: .normal)
+        if fishButtonSelected {
+            fishButton.setImage(UIImage(systemName: "square"), for: .normal)
+            fishButtonSelected = false
         } else {
-            fishButton.setImage(UIImage(systemName: "checkmark.square"),for: .normal)
+            fishButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            fishButtonSelected = true
         }
     }
     @IBAction func shellfishButtonPressed(_ sender: UIButton) {
-        if shellfishButton.currentImage == UIImage(systemName: "square") {
-            shellfishButton.setImage(UIImage(systemName: "square"),for: .normal)
+        if shellfishButtonSelected {
+            shellfishButton.setImage(UIImage(systemName: "square"), for: .normal)
+            shellfishButtonSelected = false
         } else {
-            shellfishButton.setImage(UIImage(systemName: "checkmark.square"),for: .normal)
+            shellfishButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            shellfishButtonSelected = true
         }
     }
     @IBAction func searchButton(_ sender: UIButton) {

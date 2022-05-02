@@ -145,7 +145,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="soybeansButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="c7r-st-uu1"/>
+                                                    <action selector="soybeansButtonPressed:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="xww-UV-gil"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soybeans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlY-iA-6fs">
@@ -176,7 +176,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="lactoseButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="4g3-GD-99Y"/>
+                                                    <action selector="lactoseButtonPressed:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="quK-WG-HK1"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lactose Intolerance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-LT-qgv">
@@ -207,7 +207,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="treenutButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="Qel-Cq-fd1"/>
+                                                    <action selector="treenutButtonPressed:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="YvQ-1I-B1R"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Treenut Allergy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4e-cd-nse">
@@ -238,7 +238,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="peanutButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="89O-v3-FyN"/>
+                                                    <action selector="peanutButtonPressed:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="rFw-P0-hAf"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peanut Allergy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBu-CE-qPz">
@@ -269,7 +269,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="wheatButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="2RT-pf-lQ6"/>
+                                                    <action selector="wheatButtonPressed:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="UcE-4I-u40"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wheat Allergy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC5-pO-1Di">
@@ -300,7 +300,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="eggButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="2r2-9D-NRU"/>
+                                                    <action selector="eggButtonPressed:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="Gv2-eC-rhm"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Egg Allergy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjV-ow-mPa">
@@ -331,7 +331,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="fishButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="Cwl-5a-Zm8"/>
+                                                    <action selector="fishButtonPressed:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="ZKt-qe-bVi"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fish Allergy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="br6-6L-SDJ">
@@ -362,7 +362,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="shellfishButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="ZIh-CS-hxI"/>
+                                                    <action selector="shellfishButtonPressed:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="CtX-M2-giG"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shellfish Allergy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIE-UW-mnq">
