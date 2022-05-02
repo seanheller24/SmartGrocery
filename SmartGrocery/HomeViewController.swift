@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var shellfishButton: UIButton!
     
     var groceryUser: GroceryUser!
+    var groceryProfile: GroceryProfile!
     var authUI: FUIAuth!
     
     var soyButtonSelected = false
@@ -46,6 +47,16 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        soyButtonSelected = groceryProfile.soyButtonSelected
+        lactoseButtonSelected = groceryProfile.lactoseButtonSelected
+        treenutButtonSelected = groceryProfile.treenutButtonSelected
+        peanutButtonSelected = groceryProfile.peanutButtonSelected
+        wheatButtonSelected = groceryProfile.wheatButtonSelected
+        eggButtonSelected = groceryProfile.eggButtonSelected
+        fishButtonSelected = groceryProfile.fishButtonSelected
+        shellfishButtonSelected = groceryProfile.shellfishButtonSelected
+        
         displayNameLabel.text = groceryUser.displayName
         emailLabel.text = groceryUser.email
         userSinceLabel.text = "\(dateFormatter.string(from: groceryUser.userSince))"

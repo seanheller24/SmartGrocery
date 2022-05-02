@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     
     var authUI: FUIAuth!
     var groceryUser: GroceryUser!
+    var groceryProfile: GroceryProfile!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,15 @@ class LoginViewController: UIViewController {
                 return
             }
             groceryUser = GroceryUser(user: currentUser)
+            groceryProfile = GroceryProfile(groceryUserID: groceryUser.documentID)
+            groceryProfile.saveData { (success) in
+                if success {
+                    print("Saved GroceryProfile")
+                }
+                else {
+                    print("😡 ERROR: Tried to save a new GroceryProfile, but failed")
+                }
+            }
             groceryUser.saveIfNewUser { (success) in
                 if success {
                     self.performSegue(withIdentifier: "FirstShowSegue", sender: nil)
@@ -50,6 +60,7 @@ class LoginViewController: UIViewController {
                     print("😡 ERROR: Tried to save a new GroceryUser, but failed")
                 }
             }
+            groceryProfile = GroceryProfile(groceryUserID: groceryUser.documentID)
         }
     }
     
@@ -57,6 +68,7 @@ class LoginViewController: UIViewController {
         if segue.identifier == "FirstShowSegue" {
             let destination = segue.destination as! HomeViewController
             destination.groceryUser = groceryUser
+            destination.groceryProfile = groceryProfile
         }
     }
     

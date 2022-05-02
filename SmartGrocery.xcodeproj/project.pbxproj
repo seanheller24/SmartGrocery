@@ -22,6 +22,7 @@
 		D094D9232819F2E90091F96A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D094D9222819F2E90091F96A /* HomeViewController.swift */; };
 		D094D925281B4EAC0091F96A /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D094D924281B4EAC0091F96A /* Profile.swift */; };
 		D094D92C281B58BC0091F96A /* GroceryUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D094D92B281B58BC0091F96A /* GroceryUser.swift */; };
+		D0B134D2281FC06300DC05CD /* GroceryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B134D1281FC06300DC05CD /* GroceryProfile.swift */; };
 		D0F976D12819E6B400900528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F976D02819E6B400900528 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		D094D9222819F2E90091F96A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D094D924281B4EAC0091F96A /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		D094D92B281B58BC0091F96A /* GroceryUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryUser.swift; sourceTree = "<group>"; };
+		D0B134D1281FC06300DC05CD /* GroceryProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryProfile.swift; sourceTree = "<group>"; };
 		D0F976D02819E6B400900528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		ED3653FDFF9EEFEE19DBD4D7 /* Pods_SmartGrocery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartGrocery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 				D08AD1F4281DCE19000B44F0 /* Product.swift */,
 				D05B2AA3281DA65D001AFE12 /* Products.swift */,
 				D094D92B281B58BC0091F96A /* GroceryUser.swift */,
+				D0B134D1281FC06300DC05CD /* GroceryProfile.swift */,
 				D0204CF32819E0F000719305 /* LoginViewController.swift */,
 				D094D9222819F2E90091F96A /* HomeViewController.swift */,
 				D05B2AA1281DA30B001AFE12 /* ProductViewController.swift */,
@@ -255,6 +258,7 @@
 				D05B2AA4281DA65D001AFE12 /* Products.swift in Sources */,
 				D094D9232819F2E90091F96A /* HomeViewController.swift in Sources */,
 				D0204CF42819E0F000719305 /* LoginViewController.swift in Sources */,
+				D0B134D2281FC06300DC05CD /* GroceryProfile.swift in Sources */,
 				D05B2AA2281DA30B001AFE12 /* ProductViewController.swift in Sources */,
 				D094D925281B4EAC0091F96A /* Profile.swift in Sources */,
 				D08AD1F5281DCE19000B44F0 /* Product.swift in Sources */,
