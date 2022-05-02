@@ -24,26 +24,26 @@ class Products {
     // https://us.openfoodfacts.org/cgi/search.pl?action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=milk&tagtype_1=allergens&tag_contains_1=contains&tag_1=soybeans&json=true&page=1
     var productsArray: [Product] = []
     var isFetching = false
-    var soyButtonSelected1 = false
-    var lactoseButtonSelected1 = false
-    var treenutButtonSelected1 = false
-    var peanutButtonSelected1 = false
-    var wheatButtonSelected1 = false
-    var eggButtonSelected1 = false
-    var fishButtonSelected1 = false
-    var shellfishButtonSelected1 = false
-    var productCategory1 = ""
+    var soyButtonSelectedNew = false
+    var lactoseButtonSelectedNew = false
+    var treenutButtonSelectedNew = false
+    var peanutButtonSelectedNew = false
+    var wheatButtonSelectedNew = false
+    var eggButtonSelectedNew = false
+    var fishButtonSelectedNew = false
+    var shellfishButtonSelectedNew = false
+    var productCategoryNew = ""
     
     func buildURL(urlString: String, soyButtonSelected: Bool, lactoseButtonSelected: Bool, treenutButtonSelected: Bool, peanutButtonSelected: Bool, wheatButtonSelected: Bool, eggButtonSelected: Bool, fishButtonSelected: Bool, shellfishButtonSelected: Bool, productCategory: String) -> String{
-        soyButtonSelected1 = soyButtonSelected
-        lactoseButtonSelected1 = lactoseButtonSelected
-        treenutButtonSelected1 = treenutButtonSelected
-        peanutButtonSelected1 = peanutButtonSelected
-        wheatButtonSelected1 = wheatButtonSelected
-        eggButtonSelected1 = eggButtonSelected
-        fishButtonSelected1 = fishButtonSelected
-        shellfishButtonSelected1 = shellfishButtonSelected
-        productCategory1 = productCategory
+        soyButtonSelectedNew = soyButtonSelected
+        lactoseButtonSelectedNew = lactoseButtonSelected
+        treenutButtonSelectedNew = treenutButtonSelected
+        peanutButtonSelectedNew = peanutButtonSelected
+        wheatButtonSelectedNew = wheatButtonSelected
+        eggButtonSelectedNew = eggButtonSelected
+        fishButtonSelectedNew = fishButtonSelected
+        shellfishButtonSelectedNew = shellfishButtonSelected
+        productCategoryNew = productCategory
         var finalURLString = urlString
         let soyArray: [String] = soyAllergy(soyButtonSelected: soyButtonSelected)
         let lactoseArray: [String] = lactoseAllergy(lactoseButtonSelected: lactoseButtonSelected)
@@ -169,7 +169,7 @@ class Products {
         isFetching = true
         
         print("🕸 We are accessing the url \(urlString)")
-        urlString = buildURL(urlString: urlString, soyButtonSelected: soyButtonSelected1, lactoseButtonSelected: lactoseButtonSelected1, treenutButtonSelected: treenutButtonSelected1, peanutButtonSelected: peanutButtonSelected1, wheatButtonSelected: wheatButtonSelected1, eggButtonSelected: eggButtonSelected1, fishButtonSelected: fishButtonSelected1, shellfishButtonSelected: shellfishButtonSelected1, productCategory: productCategory1)
+        urlString = buildURL(urlString: urlString, soyButtonSelected: soyButtonSelectedNew, lactoseButtonSelected: lactoseButtonSelectedNew, treenutButtonSelected: treenutButtonSelectedNew, peanutButtonSelected: peanutButtonSelectedNew, wheatButtonSelected: wheatButtonSelectedNew, eggButtonSelected: eggButtonSelectedNew, fishButtonSelected: fishButtonSelectedNew, shellfishButtonSelected: shellfishButtonSelectedNew, productCategory: productCategoryNew)
         guard let url = URL(string: urlString) else {
             print("😡 ERROR: Couldn't not create a URL from \(urlString)")
             isFetching = false

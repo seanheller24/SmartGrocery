@@ -60,11 +60,7 @@ class HomeViewController: UIViewController {
         let userRef = db.collection("profiles").document("\(groceryUser.documentID)")
         userRef.getDocument { document, error in
             guard error == nil else {
-                print("😡 ERROR: could not access document for user \(self.groceryProfile.documentID)")
-                return
-            }
-            guard document == nil else {
-                self.groceryProfile = GroceryProfile(groceryUserID: "\(self.groceryUser.documentID)")
+                print("😡 ERROR: could not access document for user \(self.groceryUser.documentID)")
                 return
             }
             self.groceryProfile = GroceryProfile(dictionary: document!.data()!)
