@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var fishButton: UIButton!
     @IBOutlet weak var shellfishButton: UIButton!
     @IBOutlet weak var productPickerView: UIPickerView!
+    @IBOutlet weak var productButton: UIButton!
     
     var groceryUser: GroceryUser!
     var groceryProfile: GroceryProfile!
@@ -102,7 +103,8 @@ class HomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowProducts" {
-            let destination = segue.destination as! ProductViewController
+            let bottomDestination = segue.destination as! UINavigationController
+            let destination = bottomDestination.topViewController as! ProductViewController
             destination.soyButtonSelected = soyButtonSelected
             destination.lactoseButtonSelected = lactoseButtonSelected
             destination.treenutButtonSelected = treenutButtonSelected
@@ -267,6 +269,10 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    @IBAction func productButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "ShowProducts", sender: sender)
+    }
+    
     
 }
 extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {

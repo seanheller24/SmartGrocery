@@ -401,7 +401,7 @@
                                     <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchButton:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="oCh-G8-VCd"/>
+                                    <action selector="productButtonPressed:" destination="qXF-Kz-lM1" eventType="touchUpInside" id="Ftr-c4-ZxE"/>
                                     <segue destination="cml-R2-IPp" kind="presentation" identifier="ShowProducts" modalPresentationStyle="fullScreen" id="C7u-an-Otm"/>
                                 </connections>
                             </button>
@@ -439,6 +439,7 @@
                         <outlet property="fishButton" destination="Gws-vc-eTQ" id="pwJ-K6-9gR"/>
                         <outlet property="lactoseButton" destination="IaD-ql-jad" id="Ofq-zb-Jxj"/>
                         <outlet property="peanutButton" destination="hk0-go-MGa" id="TaP-mh-NmP"/>
+                        <outlet property="productButton" destination="xkz-B5-NAT" id="h1J-nw-e2j"/>
                         <outlet property="productPickerView" destination="0VT-7A-7i8" id="poA-9U-fJ3"/>
                         <outlet property="shellfishButton" destination="nDv-Dr-d3b" id="wte-0H-bJs"/>
                         <outlet property="soybeansButton" destination="9XJ-sf-wiX" id="ahG-rE-gPC"/>

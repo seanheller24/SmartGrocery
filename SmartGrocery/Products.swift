@@ -68,7 +68,7 @@ class Products {
         let tagType = "&tagtype_"
         let tag_contains = "&tag_contains_"
         let tag = "&tag_"
-        let endPart = "json=true&page=1"
+        let endPart = "&json=true&page=1"
         for filterArray in filterArrays {
             if !filterArray.isEmpty {
                 finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(filterArray[0])" + tag_contains + "\(tagNumber)" + "=\(filterArray[1])" + tag + "\(tagNumber)" + "=\(filterArray[2])"
