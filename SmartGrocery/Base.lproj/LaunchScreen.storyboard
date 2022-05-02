@@ -70,7 +70,7 @@
     <resources>
         <image name="LaunchScreenFood" width="2315" height="2366"/>
         <namedColor name="BackgroundColor">
-            <color red="1" green="0.57810515169999999" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.57800000905990601" blue="0.0" alpha="0.85000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
