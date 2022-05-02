@@ -12,6 +12,15 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var products = Products()
+    var soyButtonSelected: Bool!
+    var lactoseButtonSelected: Bool!
+    var treenutButtonSelected: Bool!
+    var peanutButtonSelected: Bool!
+    var wheatButtonSelected: Bool!
+    var eggButtonSelected: Bool!
+    var fishButtonSelected: Bool!
+    var shellfishButtonSelected: Bool!
+    var productCategory: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()

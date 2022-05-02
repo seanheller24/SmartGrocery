@@ -47,6 +47,7 @@ class HomeViewController: UIViewController {
     var eggButtonSelected = false
     var fishButtonSelected = false
     var shellfishButtonSelected = false
+    var productCategory = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +102,21 @@ class HomeViewController: UIViewController {
         userImageView.sd_imageTransition?.duration = 0.1
         userImageView.sd_setImage(with: url, placeholderImage: UIImage(systemName: "person.crop.circle"))
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowProducts" {
+            let destination = segue.destination as! ProductViewController
+            destination.soyButtonSelected = soyButtonSelected
+            destination.lactoseButtonSelected = lactoseButtonSelected
+            destination.treenutButtonSelected = treenutButtonSelected
+            destination.peanutButtonSelected = peanutButtonSelected
+            destination.wheatButtonSelected = wheatButtonSelected
+            destination.eggButtonSelected = eggButtonSelected
+            destination.fishButtonSelected = fishButtonSelected
+            destination.shellfishButtonSelected = shellfishButtonSelected
+            destination.productCategory = productCategory
+        }
     }
     
     @IBAction func soybeansButtonPressed(_ sender: UIButton) {
@@ -269,6 +285,7 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         self.view.endEditing(true)
+        self.productCategory = categoryList[row]
         return categoryList[row]
     }
 }
