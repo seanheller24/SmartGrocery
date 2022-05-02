@@ -267,8 +267,6 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    @IBAction func searchButton(_ sender: UIButton) {
-    }
     
 }
 extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {

@@ -20,7 +20,7 @@ class Products {
     var page = 0
     var page_count = 0
     var page_size = 0
-    var urlString = "https://us.openfoodfacts.org/cgi/search.pl?action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=milk&tagtype_1=allergens&tag_contains_1=contains&tag_1=soybeans&json=true&page=1"
+    var urlString = "https://us.openfoodfacts.org/cgi/search.pl?action=process"
     // https://us.openfoodfacts.org/cgi/search.pl?action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=milk&tagtype_1=allergens&tag_contains_1=contains&tag_1=soybeans&json=true&page=1
     var productsArray: [Product] = []
     var isFetching = false
