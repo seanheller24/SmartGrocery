@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     var groceryProfile: GroceryProfile!
     var authUI: FUIAuth!
     
-    var productList = ["cheese", "omlette", "cookies"
+    var categoryList = ["Bars", "Biscuits", "Breads", "Breakfasts", "Cakes", "Candy", "Cheeses", "Chips", "Chocolates", "Cereal", "Confectioneries", "Crackers","Dairies", "Desserts", "Frozen Foods", "Meals", "Meat", "Milk", "Sauce", "Seafood", "Snacks", "Spreads", "Yogurt"
     ]
     var soyButtonSelected = false
     var lactoseButtonSelected = false
@@ -265,10 +265,10 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return productList.count
+        return categoryList.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         self.view.endEditing(true)
-        return productList[row]
+        return categoryList[row]
     }
 }
