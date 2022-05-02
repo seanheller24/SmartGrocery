@@ -12,6 +12,7 @@ import FirebaseGoogleAuthUI
 class LoginViewController: UIViewController {
     
     var authUI: FUIAuth!
+    var groceryUser: GroceryUser!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class LoginViewController: UIViewController {
                 print("😡 ERROR: Couldn't get currentUser")
                 return
             }
-            let groceryUser = GroceryUser(user: currentUser)
+            groceryUser = GroceryUser(user: currentUser)
             groceryUser.saveIfNewUser { (success) in
                 if success {
                     self.performSegue(withIdentifier: "FirstShowSegue", sender: nil)
@@ -52,20 +53,12 @@ class LoginViewController: UIViewController {
         }
     }
     
-//    override func prepare(for segue:UIStoryboardSegue, sender: Any?) {
-//        let db = Firestore.firestore()
-//        
-//        let userRef = db.collection("users").document(authUI.auth?.currentUser?.uid)
-//        userRef.getDocument { (document, error) in
-//            guard error == nil else {
-//                print("😡 ERROR: could not access document for user \(self.documentID)")
-//                return completion(false)
-//            }
-//        if segue.identifier == "FirstShowSegue" {
-//            let destination = segue.destination as! HomeViewController
-//            destination.groceryUser = db.collection("users").document(authUI.auth?.currentUser?.uid)
-//        }
-//    }
+    override func prepare(for segue:UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FirstShowSegue" {
+            let destination = segue.destination as! HomeViewController
+            destination.groceryUser = groceryUser
+        }
+    }
     
     func signOut() {
         do {

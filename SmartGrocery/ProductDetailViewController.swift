@@ -8,10 +8,10 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var allergenTextView: UITextView!
+    @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var productURLLabel: UITextView!
     
     var product: Product!
@@ -22,12 +22,23 @@ class ProductDetailViewController: UIViewController {
         productNameLabel.text = product.product_name
         var allergies = ""
         for allergy in product.allergens_tags {
-            allergies = allergies + "\n- \(allergy.replacingOccurrences(of: "en:" , with: "").capitalized)"
+            if allergies == "" {
+                allergies = "- \(allergy.replacingOccurrences(of: "en:" , with: "").capitalized)"
+            } else {
+                allergies = allergies + "\n- \(allergy.replacingOccurrences(of: "en:" , with: "").capitalized)"
+            }
         }
         allergenTextView.text = allergies
         productURLLabel.text = product.url
-
-        
+        var ingredients = ""
+        for ingredient in product.ingredients {
+            if ingredients == "" {
+                ingredients = "\(ingredient.id.replacingOccurrences(of: "en:", with: "").capitalized)"
+            } else {
+                ingredients = ingredients + ", \(ingredient.id.replacingOccurrences(of: "en:", with: "").capitalized)"
+            }
+        }
+        ingredientsTextView.text = ingredients
     }
-
+    
 }

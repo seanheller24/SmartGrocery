@@ -11,4 +11,8 @@ struct Product: Codable {
     var product_name: String
     var url: String
     var allergens_tags: [String]
+    var ingredients : [Ingredient]
+}
+struct Ingredient: Codable {
+    var id: String
 }
