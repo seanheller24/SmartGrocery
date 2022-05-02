@@ -31,11 +31,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var eggButton: UIButton!
     @IBOutlet weak var fishButton: UIButton!
     @IBOutlet weak var shellfishButton: UIButton!
+    @IBOutlet weak var productPickerView: UIPickerView!
     
     var groceryUser: GroceryUser!
     var groceryProfile: GroceryProfile!
     var authUI: FUIAuth!
     
+    var productList = ["cheese", "omlette", "cookies"
+    ]
     var soyButtonSelected = false
     var lactoseButtonSelected = false
     var treenutButtonSelected = false
@@ -47,6 +50,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.productPickerView.delegate = self
+        self.productPickerView.dataSource = self
+        
         let db = Firestore.firestore()
         // Create the dictionary representing data we want to save
         let userRef = db.collection("profiles").document("\(groceryUser.documentID)")
@@ -251,5 +258,17 @@ class HomeViewController: UIViewController {
     @IBAction func searchButton(_ sender: UIButton) {
     }
     
+}
+extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return productList.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        self.view.endEditing(true)
+        return productList[row]
+    }
 }
