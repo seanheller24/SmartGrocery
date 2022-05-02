@@ -51,8 +51,13 @@ class HomeViewController: UIViewController {
         // Create the dictionary representing data we want to save
         let userRef = db.collection("profiles").document("\(groceryUser.documentID)")
         userRef.getDocument { document, error in
-            if let error = error {
-                print("Couldn't access document \(error.localizedDescription)")
+            guard error == nil else {
+                print("😡 ERROR: could not access document for user \(self.groceryProfile.documentID)")
+                return
+            }
+            guard document == nil else {
+                self.groceryProfile = GroceryProfile(groceryUserID: "\(self.groceryUser.documentID)")
+                return
             }
             self.groceryProfile = GroceryProfile(dictionary: document!.data()!)
             self.groceryProfile.documentID = "\(self.groceryUser.documentID)"

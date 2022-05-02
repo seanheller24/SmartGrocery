@@ -91,7 +91,6 @@ class LoginViewController: UIViewController {
         if segue.identifier == "FirstShowSegue" {
             let destination = segue.destination as! HomeViewController
             destination.groceryUser = groceryUser
-            destination.groceryProfile = groceryProfile
         }
     }
     
