@@ -54,28 +54,52 @@ class Products {
         let fishArray: [String] = fishAllergy(fishButtonSelected: fishButtonSelected)
         let shellfishArray: [String] = shellfishAllergy(shellfishButtonSelected: shellfishButtonSelected)
         let categoryArray: [String] = categoryString(productCategory: productCategory)
-        var filterArrays: [[String]] = []
-        filterArrays.append(soyArray)
-        filterArrays.append(lactoseArray)
-        filterArrays.append(treenutArray)
-        filterArrays.append(peanutArray)
-        filterArrays.append(wheatArray)
-        filterArrays.append(eggArray)
-        filterArrays.append(fishArray)
-        filterArrays.append(shellfishArray)
-        filterArrays.append(categoryArray)
         var tagNumber = 0
         let tagType = "&tagtype_"
         let tag_contains = "&tag_contains_"
         let tag = "&tag_"
-        let endPart = "&json=true&page=1"
-        for filterArray in filterArrays {
-            if !filterArray.isEmpty {
-                finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(filterArray[0])" + tag_contains + "\(tagNumber)" + "=\(filterArray[1])" + tag + "\(tagNumber)" + "=\(filterArray[2])"
+        let endPart = "&json=true&page="
+        if !soyArray.isEmpty {
+                finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(soyArray[0])" + tag_contains + "\(tagNumber)" + "=\(soyArray[1])" + tag + "\(tagNumber)" + "=\(soyArray[2])"
                 tagNumber = tagNumber + 1
             }
+        if !lactoseArray.isEmpty {
+            finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(lactoseArray[0])" + tag_contains + "\(tagNumber)" + "=\(lactoseArray[1])" + tag + "\(tagNumber)" + "=\(lactoseArray[2])"
+            tagNumber = tagNumber + 1
         }
+        if !treenutArray.isEmpty {
+            finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(treenutArray[0])" + tag_contains + "\(tagNumber)" + "=\(treenutArray[1])" + tag + "\(tagNumber)" + "=\(treenutArray[2])"
+            tagNumber = tagNumber + 1
+        }
+        if !peanutArray.isEmpty {
+            finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(peanutArray[0])" + tag_contains + "\(tagNumber)" + "=\(peanutArray[1])" + tag + "\(tagNumber)" + "=\(peanutArray[2])"
+            tagNumber = tagNumber + 1
+        }
+        if !wheatArray.isEmpty {
+            finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(wheatArray[0])" + tag_contains + "\(tagNumber)" + "=\(wheatArray[1])" + tag + "\(tagNumber)" + "=\(wheatArray[2])"
+            tagNumber = tagNumber + 1
+        }
+        if !eggArray.isEmpty {
+            finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(eggArray[0])" + tag_contains + "\(tagNumber)" + "=\(eggArray[1])" + tag + "\(tagNumber)" + "=\(eggArray[2])"
+            tagNumber = tagNumber + 1
+        }
+        if !fishArray.isEmpty {
+            finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(fishArray[0])" + tag_contains + "\(tagNumber)" + "=\(fishArray[1])" + tag + "\(tagNumber)" + "=\(fishArray[2])"
+            tagNumber = tagNumber + 1
+        }
+        if !shellfishArray.isEmpty {
+            finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(shellfishArray[0])" + tag_contains + "\(tagNumber)" + "=\(shellfishArray[1])" + tag + "\(tagNumber)" + "=\(shellfishArray[2])"
+            tagNumber = tagNumber + 1
+        }
+        if !categoryArray.isEmpty {
+            finalURLString = finalURLString + tagType + "\(tagNumber)" + "=\(categoryArray[0])" + tag_contains + "\(tagNumber)" + "=\(categoryArray[1])" + tag + "\(tagNumber)" + "=\(categoryArray[2])"
+            tagNumber = tagNumber + 1
+        }
+        
         finalURLString = finalURLString + endPart
+        if page == 1 {
+            finalURLString = finalURLString + "1"
+        }
         return finalURLString
     }
     
@@ -168,9 +192,9 @@ class Products {
         
         isFetching = true
         
+        let newurlString = buildURL(urlString: urlString, soyButtonSelected: soyButtonSelectedNew, lactoseButtonSelected: lactoseButtonSelectedNew, treenutButtonSelected: treenutButtonSelectedNew, peanutButtonSelected: peanutButtonSelectedNew, wheatButtonSelected: wheatButtonSelectedNew, eggButtonSelected: eggButtonSelectedNew, fishButtonSelected: fishButtonSelectedNew, shellfishButtonSelected: shellfishButtonSelectedNew, productCategory: productCategoryNew)
         print("🕸 We are accessing the url \(urlString)")
-        urlString = buildURL(urlString: urlString, soyButtonSelected: soyButtonSelectedNew, lactoseButtonSelected: lactoseButtonSelectedNew, treenutButtonSelected: treenutButtonSelectedNew, peanutButtonSelected: peanutButtonSelectedNew, wheatButtonSelected: wheatButtonSelectedNew, eggButtonSelected: eggButtonSelectedNew, fishButtonSelected: fishButtonSelectedNew, shellfishButtonSelected: shellfishButtonSelectedNew, productCategory: productCategoryNew)
-        guard let url = URL(string: urlString) else {
+        guard let url = URL(string: newurlString) else {
             print("😡 ERROR: Couldn't not create a URL from \(urlString)")
             isFetching = false
             completed()
